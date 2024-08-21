@@ -1,0 +1,21 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "allure-commandline": "^2.30.0",
+    "allure-cypress": "^3.0.0-beta.10",
+    "cypress": "^13.13.3"
+  },
+  "dependencies": {
+    "cypress-recurse": "^1.35.3"
+  }
+}

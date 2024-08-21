@@ -1,0 +1,31 @@
+{
+  "adminUser": {
+    "username": "admin",
+    "password": "G3-ySzY%"
+  },
+  "teacherUser": {
+    "username": "Christopherwpsp@yourdomain.com",
+    "password": "1bp^z@Dr^H0R@MeepKi2(MtR"
+  },
+  "studentUser": {
+    "username": "Ernawpsp@yourdomain.com",
+    "password": "Z5n%FyX^wyy@299HoNiwq@0)"
+  },
+  "invalidCombinations": [
+    {
+      "username": "invalidUser",
+      "password": "invalidPassword",
+      "errorText": "Error: The username invalidUser is not registered on this site. If you are unsure of your username, try your email address instead."
+    },
+    {
+      "username": "",
+      "password": "G3-ySzY%",
+      "errorText": ""
+    },
+    {
+      "username": "admin",
+      "password": "",
+      "errorText": ""
+    } 
+  ]
+}
