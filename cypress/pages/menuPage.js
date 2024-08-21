@@ -1,6 +1,6 @@
 import BasePage from "./basePage";
 import VisibilityAssertion from "../strategies/visibilityAssertion";
-import MenuFactory from "../../factories/menuFactory";
+import MenuFactory from "../factories/menuFactory";
 
 class MenuPage extends BasePage {
   

@@ -1,4 +1,4 @@
-import users from '../cypress/fixtures/users.json';
+import users from '../fixtures/users.json';
 
 class UserFactory {
     static createUser(type) {

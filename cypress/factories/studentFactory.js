@@ -1,4 +1,4 @@
-import students from '../cypress/fixtures/students.json';
+import students from '../fixtures/students.json';
 
 class StudentFactory {
 

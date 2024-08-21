@@ -1,5 +1,5 @@
 import LoginPage from "../pages/loginPage";
-import UserFactory from "../../factories/userFactory";
+import UserFactory from "../factories/userFactory";
 
 class BaseTest {
     beforeEach() {
