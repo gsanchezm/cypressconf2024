@@ -1,6 +1,6 @@
 import LoginPage from "../pages/loginPage";
 import MenuPage from "../pages/menuPage";
-import UserFactory from "../../factories/userFactory";
+import UserFactory from "../factories/userFactory";
 import BaseTest from "../support/baseTest";
 
 class LoginTest extends BaseTest {
@@ -20,10 +20,8 @@ class LoginTest extends BaseTest {
       });
 
       it("should fail to log in with invalid credentials", () => {
-        if (LoginPage.usernameIsVisible()) {
-          LoginPage.goToUserName().logout();
-        }
-
+        LoginPage.logout();    
+        
         const invalidCombinations = UserFactory.getInvalidCombinations();
 
         invalidCombinations.forEach((user) => {
@@ -34,7 +32,6 @@ class LoginTest extends BaseTest {
           LoginPage.verifyErrorLabel(user.errorText);
 
           // Reset form between attempts if needed (optional, depends on the app behavior)
-          cy.reload();
           LoginPage.navigateTo();
         });
       });

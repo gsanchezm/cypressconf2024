@@ -1,0 +1,19 @@
+{
+    "students": [
+        {
+            "gender": "Female",
+            "firstName": "Antony",
+            "lastName": "Stark",
+            "dateOfBirth": "06/08/2008",
+            "bloodGroup": "A+",
+            "currentAddress": "10880 Malibu Point, 90265",
+            "city": "California",
+            "country": "United States (US)",
+            "email": "tony.stark@starkindustries.com",
+            "userName": "Iron Man",
+            "password": "J4RV1S@123",
+            "joiningDate": "11/26/2026",
+            "rollingNumber": "A-001"
+        }
+    ] 
+}

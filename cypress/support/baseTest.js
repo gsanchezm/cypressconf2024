@@ -10,16 +10,12 @@ class BaseTest {
       .loginAs(validUser.username)
       .withPassword(validUser.password)
       .login()
-      //.preloadingIsNotVisible();
+      .preloadingIsNotVisible();
     }
   
     afterEach() {
       // This method will run after each test in the derived classes
       cy.log('Running shared afterEach hook');
-      // Example: Perform logout or clean up after each test
-      if (!LoginPage.usernameIsVisible()) {
-        LoginPage.goToUserName().logout();
-      }
     }
   }
   

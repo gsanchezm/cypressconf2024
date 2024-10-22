@@ -13,7 +13,7 @@
   "devDependencies": {
     "allure-commandline": "^2.30.0",
     "allure-cypress": "^3.0.0-beta.10",
-    "cypress": "^13.13.3"
+    "cypress": "^13.15.0"
   },
   "dependencies": {
     "cypress-recurse": "^1.35.3"

@@ -2,6 +2,7 @@ import BaseTest from "../support/baseTest";
 import MenuPage from "../pages/menuPage";
 import StudentPage from "../pages/studentPage";
 import { MENU_OPTIONS } from "../support/menuOptions";
+import StudentFactory from "../factories/studentFactory";
 
 class StudentTest extends BaseTest{
     runTests(){
@@ -15,21 +16,28 @@ class StudentTest extends BaseTest{
               });
 
             it("should new student be created", () => {
+              const studentCombinations = StudentFactory.getStudents();
               MenuPage.navigateToMenu(MENU_OPTIONS.STUDENTS).andCreateNew();
 
-              StudentPage
-              //Personal Details
-                .genderAs('Female')
-                .withFirstName('Test Student')
-                .andLastName('Test LastName')
-                .withDateOfBirth('06/12/2026')
-                .AndBloodGroup('A+');
+              studentCombinations.forEach((student) => {
+                StudentPage
+              
+                //Personal Details
+                .genderAs(student.gender).withFirstName(student.firstName).andLastName(student.lastName)
+                .withDateOfBirth(student.dateOfBirth).AndBloodGroup(student.bloodGroup)
+                .toCurrentAddress(student.currentAddress).andCity(student.city).inCountry(student.country)
 
-              //Parent Detail
+                //Account Information
+                .withEmail(student.email).choosingUserName(student.userName)
+                .withPassword(student.password).andConfirmPassword(student.password)
 
-              //Account Information
+                //School Details
+                .JoiningDateAs(student.joiningDate).andRollingNumber(student.rollingNumber)
 
-              //School Details
+                //.successDataSaved()
+
+                .verifyStudentIsAdded(student.firstName);
+              });
             });
           });
     }

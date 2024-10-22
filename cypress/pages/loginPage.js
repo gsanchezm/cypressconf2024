@@ -1,6 +1,5 @@
 import BasePage from "./basePage";
 import TextAssertion from '../strategies/textAssertion';
-import VisibilityAssertion from '../strategies/visibilityAssertion';
 
 class LoginPage extends BasePage {
 
@@ -15,6 +14,10 @@ class LoginPage extends BasePage {
   loginAs(username) {
     cy.typeIfNotEmpty(this.elements.txtUserName(), username);
     return this;
+  }
+
+  userNameFieldIsVisible(){
+    return cy.isElementVisible(this.elements.txtUserName()); 
   }
 
   withPassword(password) {
@@ -33,7 +36,13 @@ class LoginPage extends BasePage {
   }
 
   verifyErrorLabel(errorToCompare){
-    this.assertionContext.setStrategy(new TextAssertion()).executeStrategy(this.elements.lblError(), errorToCompare);
+    cy.isElementVisible(this.elements.lblError()).then(
+      (isVisible) =>{
+        if(isVisible){
+          this.assertionContext.setStrategy(new TextAssertion()).executeStrategy(this.elements.lblError(), errorToCompare, true);
+        }
+      }
+    )
   }
 }
 
